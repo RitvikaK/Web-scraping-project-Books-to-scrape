@@ -77,7 +77,7 @@ for page_num in range(1, 51):  # Pages 1 to 50
                     .find_next("td")
                     .text.strip()
                 )
-                stock_availability=stock.split("(")[1].split(" ")[0]
+               stock_availability=int(stock.split("(")[1].split(" ")[0])
 
                 # Genre (from breadcrumb navigation)
                 breadcrumb = book_soup.find(
