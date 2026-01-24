@@ -129,8 +129,8 @@ all_books_df = all_books_df.rename(columns={
     "genre": "Genre",
     "rating": "Rating",
     "price": "Price (GBP)",
-    "stock": "Stock",
-    "number_available": "Number Available",
+    "in_stock": "In Stock?",
+    "stock_availability": "Stock Availability",
     "description": "Description",
     "url": "Product URL",
     "upc": "UPC"
