@@ -25,6 +25,7 @@ For each book, the following attributes are extracted:
 - **Genre**
 - **Price**
 - **Rating**
+- **In Stock(Y/N)**
 - **Stock availability**
 - **Product description**
 - **UPC (Universal Product Code)**
