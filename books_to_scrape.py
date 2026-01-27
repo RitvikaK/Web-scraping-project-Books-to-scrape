@@ -162,3 +162,8 @@ all_books_df.to_csv("books_to_scrape_original.csv", index=False)
 
 # For the final cleaned table: 
 all_books_cleaned_df.to_csv("books_to_scrape_cleaned.csv", index=False)
+
+# To download the files to you system: 
+from google.colab import files
+files.download('books_to_scrape_original.csv')
+files.download('books_to_scrape_cleaned.csv')
