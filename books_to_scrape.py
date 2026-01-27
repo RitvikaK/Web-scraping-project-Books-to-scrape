@@ -124,7 +124,7 @@ all_books_df=pd.DataFrame(all_books)
 # ------------------------------------------------------------
 
 # Rename and capitalise column headers
-all_books_df = all_books_df.rename(columns={
+all_books_cleaned_df = all_books_df.rename(columns={
     "title": "Title",
     "genre": "Genre",
     "rating": "Rating",
@@ -144,11 +144,21 @@ rating_map = {
     "Four": 4,
     "Five": 5
 }
-all_books_df["Rating"] = all_books_df["Rating"].map(rating_map)
+all_books_cleaned_df["Rating"] = all_books_cleaned_df["Rating"].map(rating_map)
 
 # Remove currency symbol and convert price to float
-all_books_df["Price (GBP)"] = (
-    all_books_df["Price (GBP)"]
+all_books_cleaned_df["Price (GBP)"] = (
+    all_books_cleaned_df["Price (GBP)"]
     .str.replace("£", "", regex=False)
     .astype(float)
 )
+
+# ------------------------------------------------------------
+# 12. Download tables into a csv file
+# ------------------------------------------------------------
+
+# For the original table before cleaning:
+all_books_df.to_csv("books_to_scrape_original.csv", index=False)
+
+# For the final cleaned table: 
+all_books_cleaned_df.to_csv("books_to_scrape_cleaned.csv", index=False)
